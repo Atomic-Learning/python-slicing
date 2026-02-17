@@ -1,0 +1,16 @@
+{
+    "title": "Python: Strings - Slicing and Striding",
+    "slug": "python-strings-slicing",
+    "description": "Extracting substrings using slice notation [start:stop:step], including omitting parameters for default behavior, and using negative indices.",
+    "authors": [
+        "chris-cooling"
+    ],
+    "tags": [
+        "python"
+    ],
+    "duration": 7,
+    "prerequisites": [
+        "python-strings-indexing"
+    ],
+    "related": []
+}

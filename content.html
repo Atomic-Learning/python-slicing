@@ -1,0 +1,68 @@
+
+<p>While indexing lets you get a single character, <strong>slicing</strong> lets you extract a substring (multiple characters) from a string.</p>
+
+<h2>Basic Slicing: [start:stop]</h2>
+
+<p>The slice notation <code>[start:stop]</code> extracts characters from index <code>start</code> up to (but <em>not including</em>) index <code>stop</code>:</p>
+
+<py-cell>word = "hello"
+#       01234
+
+print(word[0:3])
+print(word[1:4])
+print(word[0:5])</py-cell>
+
+<p>Notice: <code>stop</code> is <em>exclusive</em> (not included), so <code>[0:3]</code> gives indices 0, 1, 2 but not 3.</p>
+
+<h2>Default Values</h2>
+
+<p>If you omit <code>start</code>, it defaults to 0. If you omit <code>stop</code>, it defaults to the end of the string:</p>
+
+<py-cell>string = "An example"
+
+print(string[:3])
+print(string[3:])
+print(string[:])</py-cell>
+
+<h2>Adding a Step: [start:stop:step]</h2>
+
+<p>The <code>step</code> parameter controls which characters are included. A step of 2 means "take every other character":</p>
+
+<py-cell>string = "Pythonic"
+#         01234567
+
+print(string[0:6:2])
+print(string[1:6:2])
+print(string[::3])</py-cell>
+
+<p>If you omit <code>step</code>, it defaults to 1 (every character):</p>
+
+<py-cell>string = "An example"
+
+print(string[0::])
+print(string[1:5:])</py-cell>
+
+<h2>Negative Indices in Slices</h2>
+
+<p>You can use negative indices in slices:</p>
+
+<py-cell>word = "hello"
+
+print(word[-3:-1])
+print(word[0:-1])</py-cell>
+
+<h2>Negative Steps (Reversing)</h2>
+
+<p>A negative step reverses the direction, useful for reversing strings:</p>
+
+<py-cell>word = "hello"
+
+print(word[::-1])
+print(word[4:1:-2])</py-cell>
+
+<p>When using a negative step, <code>start</code> will typically be higher than <code>stop</code>. If <code>start</code> is omitted, it defaults to the end of the string and, if <code>stop</code> is omitted, it defaults to the beginning of the string.</p>
+
+<py-cell>message = "Hello there!"
+
+print(message[-2::-3])
+print(message[8::-3])</py-cell>
