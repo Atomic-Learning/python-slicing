@@ -8,9 +8,10 @@
     "tags": [
         "python"
     ],
-    "duration": 7,
+    "duration": 8,
     "prerequisites": [
         "python-strings-indexing",
+        "python-lists-indexing",
         "python-indexerror"
     ],
     "related": []

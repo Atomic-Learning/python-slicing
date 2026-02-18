@@ -1,5 +1,5 @@
 
-<p>While indexing lets you get a single character, <strong>slicing</strong> lets you extract a substring (multiple characters) from a string.</p>
+<p>Slicing allows you to extract a portion of an ordered collection such as a string or list. The same syntax applies for both strings and lists.</p>
 
 <h2>Basic Slicing: [start:stop]</h2>
 
@@ -12,21 +12,24 @@ print(word[0:3])
 print(word[1:4])
 print(word[0:5])</py-cell>
 
-<p>Notice: <code>stop</code> is <em>exclusive</em> (not included), so <code>[0:3]</code> gives indices 0, 1, 2 but not 3.</p>
+<p>Notice: <code>stop</code> is <em>exclusive</em> (not included), so <code>[0:3]</code> gives indices 0, 1, 2 but not 3. When slicing a string, the returned value is a new string of the extracted characters.</p>
 
 <h2>Default Values</h2>
 
 <p>If you omit <code>start</code>, it defaults to 0. If you omit <code>stop</code>, it defaults to the end of the string:</p>
 
-<py-cell>string = "An example"
+<py-cell>my_list = [0, 10, 20, 30, 40]
+#         0   1   2   3   4
 
-print(string[:3])
-print(string[3:])
-print(string[:])</py-cell>
+print(my_list[:3])
+print(my_list[3:])
+print(my_list[:])</py-cell>
+
+<p>When slicing a list, the returned value is a new list of the extracted elements.</p>
 
 <h2>Adding a Step: [start:stop:step]</h2>
 
-<p>The <code>step</code> parameter controls which characters are included. A step of 2 means "take every other character":</p>
+<p>The <code>step</code> parameter controls which characters are included. A step of 2 means "take every other character" when slicing a string:</p>
 
 <py-cell>string = "Pythonic"
 #         01234567
@@ -46,19 +49,10 @@ print(string[1:5:])</py-cell>
 
 <p>You can use negative indices in slices:</p>
 
-<py-cell>word = "hello"
+<py-cell>my_list = [0, 1, 2, 3, 4, 5]
 
-print(word[-3:-1])
-print(word[0:-1])</py-cell>
-
-<h2>Negative Steps (Reversing)</h2>
-
-<p>A negative step reverses the direction, useful for reversing strings:</p>
-
-<py-cell>word = "hello"
-
-print(word[::-1])
-print(word[4:1:-2])</py-cell>
+print(my_list[-3:-1])
+print(my_list[0:-1])</py-cell>
 
 <p>When using a negative step, <code>start</code> will typically be higher than <code>stop</code>. If <code>start</code> is omitted, it defaults to the end of the string and, if <code>stop</code> is omitted, it defaults to the beginning of the string.</p>
 
@@ -66,3 +60,26 @@ print(word[4:1:-2])</py-cell>
 
 print(message[-2::-3])
 print(message[8::-3])</py-cell>
+
+<h2>Out of Range Indices</h2>
+<p>If <code>start</code> or <code>stop</code> are out of bounds, an exception will not be raised:</p>
+
+<py-cell>string = "Slicing"
+print(string[0:100])  # No error even though index 100 doesn't exist</py-cell>
+
+<p>In these cases, Python will return whatever characters or items are available within the bounds of the string or list.</p>
+
+<h2>Empty Return Values</h2>
+
+<p>There are several situations where an empty slice is returned:</p>
+<ul>
+  <li>When <code>step</code> is positive (or omitted) and<code>start</code> is greater than or equal to <code>stop</code>, e.g., <code>"hello"[3:1]</code></li>
+  <li>When the slice is out of bounds, e.g., <code>"hello"[10:20]</code></li>
+  <li>When the <code>step</code> is negative and <code>start</code> is less than or equal to <code>stop</code>, e.g., <code>"hello"[1:3:-1]</code></li>
+</ul>
+
+For example:
+
+<py-cell>print("hello"[3:1])
+print("hello"[10:20])
+print("hello"[1:3:-1])</py-cell>
