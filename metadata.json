@@ -10,7 +10,8 @@
     ],
     "duration": 7,
     "prerequisites": [
-        "python-strings-indexing"
+        "python-strings-indexing",
+        "python-indexerror"
     ],
     "related": []
 }
