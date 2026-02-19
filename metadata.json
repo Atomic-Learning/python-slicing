@@ -1,7 +1,7 @@
 {
     "title": "Python: Strings - Slicing and Striding",
-    "slug": "python-strings-slicing",
-    "description": "Extracting substrings using slice notation [start:stop:step], including omitting parameters for default behavior, and using negative indices.",
+    "slug": "python-slicing",
+    "description": "Extracting items from Python collections using [start:stop:step], including omitting parameters for default behavior, and using negative indices. Uses lists and strings for examples.",
     "authors": [
         "chris-cooling"
     ],
